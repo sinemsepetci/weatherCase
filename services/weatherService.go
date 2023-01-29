@@ -63,7 +63,7 @@ func CallWeatherApi(location string) models.WeatherApiResponse {
 func CallWeatherStackApi(location string) models.WeatherStackResponse {
 	var response models.WeatherStackResponse
 	//WeatherStack
-	weatherStackResponse, error := http.Get("http://api.weatherstack.com/current?access_key=" + configs.EnvWeatherStackApiKey() + "&query=Istanbul")
+	weatherStackResponse, error := http.Get("http://api.weatherstack.com/current?access_key=" + configs.EnvWeatherStackApiKey() + "&query=" + location)
 	if error != nil {
 		fmt.Println(error)
 	}
